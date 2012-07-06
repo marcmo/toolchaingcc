@@ -15,6 +15,7 @@ cxx_plugin do |cxx,bbs,log|
             :INCLUDE_PATH_FLAG => "-I",
             :COMPILE_FLAGS => "-c ",
             :DEP_FLAGS => "-MMD -MF ", # empty space at the end is important!
+            :DEP_FLAGS_SPACE => true,
             :PREPRO_FLAGS => "-E -P",
             :ERROR_PARSER => gccCompilerErrorParser
           },
@@ -38,7 +39,7 @@ cxx_plugin do |cxx,bbs,log|
         :EXE_FLAG => "-o",
         :LIB_FLAG => "-l",
         :LIB_PATH_FLAG => "-L",
-        :ERROR_PARSER => gccCompilerErrorParser
+        :ERROR_PARSER => gccLinkerErrorParser
       },
     :ARCHIVER =>
       {
