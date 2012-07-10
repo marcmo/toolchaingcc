@@ -7,7 +7,7 @@ cxx_plugin do |cxx,bbs,log|
   toolchain "gcc",
     :COMPILER =>
       {
-        :CPP => 
+        :CPP =>
           {
             :COMMAND => "g++",
             :DEFINE_FLAG => "-D",
@@ -19,7 +19,7 @@ cxx_plugin do |cxx,bbs,log|
             :PREPRO_FLAGS => "-E -P",
             :ERROR_PARSER => gccCompilerErrorParser
           },
-        :C => 
+        :C =>
           {
             :BASED_ON => :CPP,
             :SOURCE_FILE_ENDINGS => [".c"],
@@ -31,7 +31,7 @@ cxx_plugin do |cxx,bbs,log|
             :SOURCE_FILE_ENDINGS => [".asm", ".s", ".S"]
           }
       },
-    :LINKER => 
+    :LINKER =>
       {
         :COMMAND => "g++",
         :SCRIPT => "-T",
@@ -39,7 +39,7 @@ cxx_plugin do |cxx,bbs,log|
         :EXE_FLAG => "-o",
         :LIB_FLAG => "-l",
         :LIB_PATH_FLAG => "-L",
-        :ERROR_PARSER => gccLinkerErrorParser
+        :ERROR_PARSER => GCCLinkerErrorParser.new
       },
     :ARCHIVER =>
       {
@@ -49,4 +49,3 @@ cxx_plugin do |cxx,bbs,log|
       }
 
 end
-
