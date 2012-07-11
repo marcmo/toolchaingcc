@@ -2,7 +2,7 @@ cxx_plugin do |cxx,bbs,log|
 
   require 'errorparser/gcc_compiler_error_parser'
   require 'errorparser/gcc_linker_error_parser'
-  gccCompilerErrorParser = GCCCompilerErrorParser.new
+  gccCompilerErrorParser = Cxxproject::GCCCompilerErrorParser.new
 
   toolchain "gcc",
     :COMPILER =>
@@ -39,7 +39,7 @@ cxx_plugin do |cxx,bbs,log|
         :EXE_FLAG => "-o",
         :LIB_FLAG => "-l",
         :LIB_PATH_FLAG => "-L",
-        :ERROR_PARSER => GCCLinkerErrorParser.new
+        :ERROR_PARSER => Cxxproject::GCCLinkerErrorParser.new
       },
     :ARCHIVER =>
       {
