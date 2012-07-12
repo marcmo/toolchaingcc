@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   s.author = "oliver mueller"
   s.email = "oliver.mueller@gmail.com"
   s.homepage = "https://github.com/marcmo/cxxproject"
-  s.add_dependency("cxxproject", ">= 0.6.2")
+  s.add_dependency('cxxproject')
 end
