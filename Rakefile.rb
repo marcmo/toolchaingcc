@@ -1,6 +1,3 @@
-require "rubygems/package_task"
+require "bundler/gem_tasks"
 
-spec = Gem::Specification.load('gcc.gemspec')
-Gem::PackageTask.new(spec){ |pkg| }
-
-task :default => [:gem]
+task :package => :build
