@@ -1,16 +1,6 @@
-$:.unshift(File.dirname(__FILE__)+"/")
-
-require "rake"
-require 'yaml'
-
 include FileUtils
 
-YAML::ENGINE.yamler = 'syck'
-
-PKG_VERSION = "0.1.3"
-PKG_FILES = FileList[
-  "lib/**/*.rb"
-]
+PKG_VERSION = "0.1.4"
 
 Gem::Specification.new do |s|
   s.name = "cxxproject_gcctoolchain"
@@ -19,10 +9,11 @@ Gem::Specification.new do |s|
   s.description = <<-EOF
     Toolchain supporting GCC
   EOF
-  s.files = PKG_FILES.to_a
+  s.files = `git ls-files`.split($\)
   s.require_path = "lib"
   s.author = "oliver mueller"
   s.email = "oliver.mueller@gmail.com"
   s.homepage = "https://github.com/marcmo/cxxproject"
+
   s.add_dependency('cxxproject')
 end
