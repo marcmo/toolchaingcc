@@ -13,7 +13,7 @@ cxx_plugin do |cxx,bbs,log|
             :DEFINE_FLAG => "-D",
             :OBJECT_FILE_FLAG => "-o",
             :INCLUDE_PATH_FLAG => "-I",
-            :COMPILE_FLAGS => "-c ",
+            :COMPILE_FLAGS => "-c -Wall ",
             :DEP_FLAGS => "-MMD -MF ", # empty space at the end is important!
             :DEP_FLAGS_SPACE => true,
             :PREPRO_FLAGS => "-E -P",
